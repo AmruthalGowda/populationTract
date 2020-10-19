@@ -19,6 +19,8 @@ As a data engineer, clean the data by handling missing values and create a platf
 Dataset is available in [path](https://www.census.gov/data/tables/time-series/dec/metro-micro/tract-change-00-10.html)
 
 # Approach
+<img src="https://github.com/AmruthalGowda/populationTract/blob/main/Architecture.PNG" >
+
 Steps followed to resolve this problem is- <br>
 Read file contents line by line <br>
 Clean data as necessary <br>
