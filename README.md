@@ -18,7 +18,6 @@ As a data engineer, clean the data by handling missing values and create a platf
 # Input
 Dataset is available in [path](https://www.census.gov/data/tables/time-series/dec/metro-micro/tract-change-00-10.html)
 
-
 # Approach
 Steps followed to resolve this problem is- <br>
 Read file contents line by line <br>
@@ -28,7 +27,6 @@ Sort data in the dictionary <br>
 Write data to output file <br>
 
 # Algorithm
-<<<<<<< HEAD
 step 1: Create result dictionary<br>
 step 2: Open file in read mode<br>
 step 3: Set pop2000,pop2010 and perchange variables to 0<br>
@@ -45,24 +43,6 @@ step 10: If CSBA code exists in dictionary:<br>
 step 11: Open 'report.csv' into writing mode<br>
 step 12: Find average of pchange by diving with tract<br>
 step 13: Sort result dictionary and write <br>
-=======
-Step 1: Create result dictionary
-Step 2: Open file in read mode
-Step 3: Set pop2000,pop2010 and perchange variables to 0
-Step 4: Extracting pop2000, pop2010 and pchange from data 
-step 5: Convert step4 data into respective format. For ex: population to int and pchange to float
-step 6: Removing common from numerical values 
-step 7: Handle missing/garbage value from pop and pchange data
-step 8: Read CSBAcode and CSBA title from data 
-step 9: Check for each row: 
-	If CSBA code is empty in result dictionary add required data into result dictionary
-step 10: If CSBA code exists in dictionary:
-	Check for CSBA title - if empty then add title in the dictionary 
-	Add new row data(pop2000, pop2010, pchange) into existing dictionary 
-step 11: Open 'report.csv' into writing mode
-step 12: Find average of pchange by diving with tract
-step 13: Sort result dictionary and write 
->>>>>>> 9a9ed7fad038b13f1680ed6357de5a73f4c8c46d
 
 # Output
 Program creates a `report.csv` output file and it holds below data respectively:
@@ -93,7 +73,7 @@ GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,PO
 1003010600,1,3,10600,7.168475298,0.008292316,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,3706,1374,3325,1375,-381,-10.28,1,0.07
 1003010701,1,3,10701,41.96853267,20.84276452,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,6447,2597,7882,3297,1435,22.26,700,26.95
 ```
-<b>output</b> 
+<b>test1_output</b> 
 ```
 19300,"Daphne-Fairhope-Foley, AL",7 ,32465,35290,5.93
 33860,"Montgomery, AL",12 ,43741,54571,20.12
@@ -122,7 +102,7 @@ GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,PO
 1003010600,1,3,10600,7.168475298,0.008292316,380,,"Daphne-Fairhope-Foley, AL",,2,C,3706,1374,3325,1375,-381,-10.28,1,0.07
 1003010701,1,3,10701,41.96853267,20.84276452,380,,"Daphne-Fairhope-Foley, AL",,2,C,6447,2597,7882,3297,1435,22.26,700,26.95
 ```
-<b>output</b> Creates empty `report.csv`
+<b>test2_output</b> Creates empty `report.csv`
 ```
 empty report.csv generated
 ```
@@ -149,7 +129,7 @@ GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,PO
 1003010600,1,3,10600,7.168475298,0.008292316,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,3706,1374,3325,1375,-381,-10.28,1,0.07
 1003010701,1,3,10701,41.96853267,20.84276452,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,6447,2597,7882,3297,1435,22.26,700,26.95
 ```
-<b>output</b> Missing and garbage values handled
+<b>test3_output</b> Missing and garbage values handled
 ```
 19300,"Daphne-Fairhope-Foley, AL",7 ,32465,35290,5.02
 33860,"Montgomery, AL",12 ,36171,41245,8.7
@@ -158,7 +138,6 @@ GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,PO
 ```
 GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,POP00,HU00,POP10,HU10,NPCHG,PPCHG,NHCHG,PHCHG
 1001020100,1,1,20100,3.787640715,0.014020142,388,33860,"Montgomery, AL",,1,O,1906,764,1912,752,6,0.31,-12,-1.57
-<<<<<<< HEAD
 1001020200,1,1,20200,1.289776246,0.002257153,388,4444,"Montgomery, BL",,1,O,1894,731,2170,822,276,14.57,91,12.45
 1001020300,1,1,20300,2.065366326,0.003495769,388,33860,"Montgomery, AL",,1,O,3340,1265,3373,1326,33,0.99,61,4.82
 1001020400,1,1,20400,2.464376283,0.006271844,388,33860,,,1,O,4574,1880,4386,1823,-188,-4.11,-57,-3.03
@@ -176,39 +155,13 @@ GEOID,ST10,COU10,TRACT10,AREAL10,AREAW10,CSA09,CBSA09,CBSA_T,MDIV09,CSI,COFLG,PO
 1003010400,1,3,10400,284.6390057,1.490731231,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,4451,1760,4736,1959,285,6.4,199,11.31
 1003010500,1,3,10500,6.748636673,0.059967845,380,19300,,,2,C,4578,1869,4815,1977,237,5.18,108,5.78
 1003010600,1,3,10600,7.168475298,0.008292316,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,3706,1374,3325,1375,-381,-10.28,1,0.07
-=======
-1001020200,1,1,20200,1.289776246,0.002257153,388,33860,"Montgomery, AL",,1,O,1894,731,2170,822,276,14.57,91,12.45
-1001020300,1,1,20300,2.065366326,0.003495769,388,5655,"Montgomery, ZL",,1,O,3340,1265,3373,1326,33,0.99,61,4.82
-1001020400,1,1,20400,2.464376283,0.006271844,388,33860,"Montgomery, AL",,1,O,4574,1880,4386,1823,-188,-4.11,-57,-3.03
-1001020500,1,1,20500,4.400686412,0.018691979,388,33860,"Montgomery, AL",,1,O,6081,2330,10766,4308,4685,77.04,1978,84.89
-1001020600,1,1,20600,3.096680757,0.023184663,388,33860,,,1,O,3277,1301,3668,1452,391,11.93,151,11.61
-1001020700,1,1,20700,8.651879854,0.301760085,388,4885,"Montgomery, BL",,1,O,2889,1343,2891,1301,2,0.07,-42,-3.13
-1001020801,1,1,20801,47.98559298,3.132818376,388,33860,"Montgomery, AL",,1,O,1924,770,3081,1169,1157,60.14,399,51.82
-1001020802,1,1,20802,73.67251161,0.261786155,388,,"Montgomery, AL",,1,O,7570,2925,10435,4003,2865,37.85,1078,36.85
-1001020900,1,1,20900,113.0340426,0.199289726,388,33860,"Montgomery, AL",,1,O,4652,1867,5675,2320,1023,21.99,453,24.26
-1001021000,1,1,21000,149.3655569,0.612906701,388,33860,"Montgomery, AL",,1,O,2621,1155,2894,1261,273,10.42,106,9.18
-1001021100,1,1,21100,184.6219554,5.375584752,388,4885,"Montgomery, BL",,1,O,3013,1397,3320,1598,307,10.19,201,14.39
-1003010100,1,3,10100,375.1117071,14.49553048,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,4154,2341,3804,1984,-350,-8.43,-357,-15.25
-1003010200,1,3,10200,85.61536617,0.138294463,380,4885,"Daphne-Fairhope-Foley, AL",,2,C,2854,1039,2902,1269,48,1.68,230,22.14
-1003010300,1,3,10300,132.7134249,8.948790496,380,19300,,,2,C,6275,2545,7826,3100,1551,24.72,555,21.81
-1003010400,1,3,10400,284.6390057,1.490731231,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,4451,1760,4736,1959,285,6.4,199,11.31
-1003010500,1,3,10500,6.748636673,0.059967845,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,4578,1869,4815,1977,237,5.18,108,5.78
-1003010600,1,3,10600,7.168475298,0.008292316,380,,"Daphne-Fairhope-Foley, AL",,2,C,3706,1374,3325,1375,-381,-10.28,1,0.07
->>>>>>> 9a9ed7fad038b13f1680ed6357de5a73f4c8c46d
 1003010701,1,3,10701,41.96853267,20.84276452,380,19300,"Daphne-Fairhope-Foley, AL",,2,C,6447,2597,7882,3297,1435,22.26,700,26.95
 ```
 <b>output</b> It fills missing CBSA title based on CBSA code
 ```
-<<<<<<< HEAD
 19300,"Daphne-Fairhope-Foley, AL",7 ,32465,35290,5.93
 33860,"Montgomery, AL",10 ,38958,49510,22.68
 4444,"Montgomery, BL",2 ,4783,5061,7.32
-=======
-19300,"Daphne-Fairhope-Foley, AL",5 ,25905,29063,10.03
-33860,"Montgomery, AL",8 ,26929,34552,24.04
-4885,"Montgomery, BL",3 ,8756,9113,3.98
-5655,"Montgomery, ZL",1 ,3340,3373,0.99
->>>>>>> 9a9ed7fad038b13f1680ed6357de5a73f4c8c46d
 ```
 
 # Run Instructions
@@ -218,9 +171,4 @@ Test cases can be run by moving each input file from testsuite to input file and
 
 # Contact
 Email Address : alakshmanegowda@hawk.iit.edu <br>
-<<<<<<< HEAD
 [LinkedIn](https://www.linkedin.com/in/amruthagowda/)
-=======
-[LinkedIn](https://www.linkedin.com/in/amruthagowda/)
-
->>>>>>> 9a9ed7fad038b13f1680ed6357de5a73f4c8c46d
