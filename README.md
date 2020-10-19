@@ -36,11 +36,11 @@ step 6: Removing common from numerical values <br>
 step 7: Handle missing/garbage value from pop and pchange data<br>
 step 8: Read CSBAcode and CSBA title from data <br>
 step 9: Check for each row: <br>
-	<t>If CSBA code is empty in result dictionary add required data into result dictionary<br>
+	&nbsp;&nbsp;&nbsp;&nbsp; If CSBA code is empty in result dictionary add required data into result dictionary<br>
 step 10: If CSBA code exists in dictionary:<br>
-	<t>Check for CSBA title - if empty then add title in the dictionary <br>
-	<t>Add new row data(pop2000, pop2010, pchange) into existing dictionary <br>
-step 11: Open 'report.csv' into writing mode<br>
+	&nbsp;&nbsp;&nbsp;&nbsp; Check for CSBA title - if empty then add title in the dictionary <br>
+	&nbsp;&nbsp;&nbsp;&nbsp; Add new row data(pop2000, pop2010, pchange) into existing dictionary <br>
+step 11: Open `report.csv` into writing mode<br>
 step 12: Find average of pchange by diving with tract<br>
 step 13: Sort result dictionary and write <br>
 
